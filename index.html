@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1224" />
+  <meta name="description" content="A responsive weather app showing current conditions and a seven-day forecast." />
+  <title>WeatherNow | Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="WeatherNow home"><span class="brand-icon">☀</span><span>Weather<span class="brand-light">Now</span></span></a>
+      <span class="top-note">Your daily weather companion</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">LIVE WEATHER</p>
+      <h1>Forecast at a glance.</h1>
+      <p class="hero-copy">Check the weather wherever your day takes you.</p>
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="city-input">Search city</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="city-input" type="search" placeholder="Search a city (e.g. Mumbai)" autocomplete="off" required />
+        <button type="submit" id="search-button">Search</button>
+        <button type="button" id="location-button" class="location-button" title="Use my location" aria-label="Use my location">◎</button>
+      </form>
+      <p id="status-message" class="status-message" role="status">Search for a city to see the latest weather.</p>
+    </section>
+
+    <section id="current-weather" class="weather-card" aria-live="polite">
+      <div class="weather-main">
+        <div>
+          <p id="current-day" class="muted-label">CURRENT WEATHER</p>
+          <h2 id="place-name">Mumbai, India</h2>
+          <p id="weather-description" class="weather-description">Ready to check the forecast</p>
+          <p id="local-time" class="local-time">Search a city to load live conditions</p>
+        </div>
+        <div class="temperature-block"><span id="weather-icon" class="weather-icon" aria-hidden="true">🌤️</span><div><span id="temperature" class="temperature">--°</span><span id="feels-like" class="feels-like">Feels like --°</span></div></div>
+      </div>
+      <div class="details-grid">
+        <article class="detail-tile"><span class="detail-icon">💧</span><div><p>Humidity</p><strong id="humidity">--%</strong></div></article>
+        <article class="detail-tile"><span class="detail-icon">💨</span><div><p>Wind speed</p><strong id="wind-speed">-- km/h</strong></div></article>
+        <article class="detail-tile"><span class="detail-icon">🌡️</span><div><p>Feels like</p><strong id="detail-feels-like">--°C</strong></div></article>
+        <article class="detail-tile"><span class="detail-icon">🌧️</span><div><p>Precipitation</p><strong id="precipitation">-- mm</strong></div></article>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading"><div><p class="eyebrow">PLAN AHEAD</p><h2>7-day forecast</h2></div><span class="section-tag">Daily outlook</span></div>
+      <div id="forecast-grid" class="forecast-grid"><div class="forecast-placeholder">Your 7-day forecast will appear here after searching for a city.</div></div>
+    </section>
+
+    <footer><p>Built for Prodigy InfoTech Web Development Internship · Task 5</p><p>Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>.</p></footer>
+  </main>
+</body>
+</html>
